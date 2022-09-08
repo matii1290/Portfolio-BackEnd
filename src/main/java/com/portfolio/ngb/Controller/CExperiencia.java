@@ -17,11 +17,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/explab")
-@CrossOrigin(origins = "https://frontendportfolio001.web.app")
+@CrossOrigin(origins = "https://frontendportfolio001.web.app") 
 public class CExperiencia {
     @Autowired
     SExperiencia sExperiencia;
@@ -31,7 +32,7 @@ public class CExperiencia {
         List<Experiencia> list = sExperiencia.list();
         return new ResponseEntity(list, HttpStatus.OK);
     }
-    
+    @CrossOrigin(origins = "https://frontendportfolio001.web.app")
     @GetMapping("/detail/{id}")
     public ResponseEntity<Experiencia> getById(@PathVariable("id") int id){
         if(!sExperiencia.existsById(id))

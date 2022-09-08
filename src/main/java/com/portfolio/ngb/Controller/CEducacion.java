@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/educacion")
-@CrossOrigin(origins = "https://frontendportfolio001.web.app")
+@CrossOrigin(origins = "https://frontendportfolio001.web.app") 
 public class CEducacion {
 
     @Autowired
@@ -36,7 +36,7 @@ public class CEducacion {
         List<Educacion> list = sEducacion.list();
         return new ResponseEntity(list, HttpStatus.OK);
     }
-
+    
     @GetMapping("/detail/{id}")
     public ResponseEntity<Educacion> getById(@PathVariable ("id")int id){
         if(!sEducacion.existsById(id)){
